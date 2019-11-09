@@ -61,30 +61,79 @@
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                    <td><a href="#" class="btn btn-warning">Modifi status</a></td>
-                    <td><a href="#" class="btn btn-primary">Modifi data</a></td>
-                    <td><a href="#" class="btn btn-danger">Eliminate</a></td>
+                    <td><button class="btn btn-warning" data-toggle="modal" data-target="#statusModal">Modify status</button></td>
+                    <td><a href="modAnimal.html" class="btn btn-primary">Modify data</a></td>
+                    <td><button class="btn btn-danger" data-toggle="modal" data-target="#eliminateModal">Eliminate</button></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                    <td><a href="#" class="btn btn-warning">Modifi status</a></td>
-                    <td><a href="#" class="btn btn-primary">Modifi data</a></td>
-                    <td><a href="#" class="btn btn-danger">Eliminate</a></td>
+                    <td><button class="btn btn-warning" data-toggle="modal" data-target="#statusModal">Modify status</button></td>
+                    <td><a href="modAnimal.html" class="btn btn-primary">Modify data</a></td>
+                    <td><button class="btn btn-danger" data-toggle="modal" data-target="#eliminateModal">Eliminate</button></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
-                    <td><a href="#" class="btn btn-warning">Modifi status</a></td>
-                    <td><a href="#" class="btn btn-primary">Modifi data</a></td>
-                    <td><a href="#" class="btn btn-danger">Eliminate</a></td>
+                    <td><button class="btn btn-warning" data-toggle="modal" data-target="#statusModal">Modify status</button></td>
+                    <td><a href="modAnimal.html" class="btn btn-primary">Modify data</a></td>
+                    <td><button class="btn btn-danger" data-toggle="modal" data-target="#eliminateModal">Eliminate</button></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- Change status Modal -->
+    <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Animal name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <label for="Status">Status:</label>
+                    <select class="form-control">                    
+                        <option>Up for adoption</option>
+                        <option>Adopted</option>
+                        <option>Euthanazed</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Eliminate animal Modal-->
+    <div class="modal fade" id="eliminateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Animal name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1>Are you sure you want to eliminate this animal?</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
