@@ -37,6 +37,13 @@ blue: #1500aa;
     font-size: 30px;
 }
 
+.navbar #singin-link
+{
+    text-decoration: none;
+    color: #01f58d;
+    text-align: right;
+}
+
 /*carousel style*/
 .carousel-inner
 {
@@ -68,4 +75,19 @@ blue: #1500aa;
 {
     color: #d8d6d8;
     font-size: 20px;
+}
+
+.btn
+{
+    background-color: #1500aa;
+    border-color: #1500aa;
+    border-radius: 20px;
+    height: 60px;
+    width: 200px;
+    font-size: 25px;
+}
+
+.btn:hover
+{
+    background-color: #01f58d;
 }
