@@ -28,3 +28,57 @@ blue: #1500aa;
     color: #01f58d;
     text-align: right;
 }
+
+/*login form style*/
+#login-form
+{
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+}
+
+#login-form h1
+{
+    margin-bottom: 50px;
+    color: #01f58d;
+}
+
+.modal-content
+{
+    background-color: #1500aa;
+    padding: 40px 18px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+.form-group
+{
+    margin-bottom: 25px;
+}
+
+.form-gorup input
+{
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+}
+.btn
+{
+    background-color: #1500aa;
+    color: #01f58d;
+    border-color: #01f58d;
+    border-radius: 20px;
+    border-width: 2px;
+}
+
+.btn:hover
+{
+    background-color: #01f58d;
+    color: white;
+}
+
+#login-form a
+{
+    margin-top: 20px;
+}
+
