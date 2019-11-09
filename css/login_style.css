@@ -1,0 +1,30 @@
+/*
+*Color codes:
+*Green: #01f58d;
+        rgb(1, 245, 141);
+
+text: #d8d6d8;
+      rgb(216, 214, 216);
+
+blue: #1500aa;
+      rgb(21, 0, 170);
+*/
+
+*
+{
+    font-family: 'Arvo', serif;
+}
+
+/*navbar style*/
+.navbar-brand
+{
+    color: #01f58d !important;
+    font-size: 30px;
+}
+
+.navbar #singin-link
+{
+    text-decoration: none;
+    color: #01f58d;
+    text-align: right;
+}
