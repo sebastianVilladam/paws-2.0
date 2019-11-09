@@ -1,0 +1,71 @@
+/*
+*Color codes:
+*Green: #01f58d;
+        rgb(1, 245, 141);
+
+text: #d8d6d8;
+      rgb(216, 214, 216);
+
+blue: #1500aa;
+      rgb(21, 0, 170);
+*/
+
+*
+{
+    font-family: 'Arvo', serif;
+}
+
+/*uper navbar info style*/
+#extras
+{
+    background-color: #1500aa;
+    color: #01f58d;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+#extras a
+{
+    text-decoration: none;
+    color: #01f58d;
+}
+
+/*navbar style*/
+.navbar-brand
+{
+    color: #01f58d !important;
+    font-size: 30px;
+}
+
+/*carousel style*/
+.carousel-inner
+{
+    height: 750px;
+}
+
+.carousel-inner img
+{
+    width: 100%;
+    max-height: auto;
+}
+
+.carousel-caption
+{
+  position: absolute;
+  text-align: left;
+  top: 30%;
+  transform: translateY(10%);
+}
+
+.carousel-caption h5
+{
+    font-size: 80px;
+    color: #01f58d;
+    font-weight: 400;
+}
+
+.carousel-inner p
+{
+    color: #d8d6d8;
+    font-size: 20px;
+}
