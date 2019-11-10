@@ -54,12 +54,30 @@
     </nav>
 
     <h1>Animals up for adoption</h1>
-    <button class="btn btn-primary" onclick="limpiar()">limpiar listas</button>
+    <div>
+        <select id="sort-option" onchange="changeSortMethod()">                    
+            <option value="1">Sort by entry date</option>
+            <option value="2">Sort by name</option>
+            <option value="3">Sort by type</option>
+        </select>
+    </div>
 
     <!--Animal cards section-->
-    <div class="card-deck" id="animals_list">
-        <div class="row-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1" id="branches-list">
+                <p>Filter by branch:</p>
+                <select id="branch-filter" onchange="setBranchFilter()">
 
+                </select>
+            </div>
+            <div class="col-md-11">
+                <div class="card-deck" id="animals_list">
+                    <div class="row-padding">
+            
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
