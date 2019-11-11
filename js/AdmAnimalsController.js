@@ -31,16 +31,33 @@ function printList()
             strStatus = "Adopted";
 
         //Bootstrap table structure
+        //data-toggle='modal' data-target='#statusModal'
         var newText = "<tr>" +  
                         "<th scope='row'>" + key + "</th>" +
                         "<td>" + response[key].animal_name + "</td>" +
                         "<td>" + strStatus + "</td>" +
                         "<td>" + response[key].animal_id + "</td>" +  
-                        "<td><button class='btn btn-warning' data-toggle='modal' data-target='#statusModal'>Modify status</button></td>" +
-                        "<td><a href='modAnimal.html' class='btn btn-primary'>Modify data</a></td>" +
-                        "<td><button class='btn btn-danger' data-toggle='modal' data-target='#eliminateModal'>Eliminate</button></td>" +
+                        "<td>" + 
+                            "<form action='animalProfile.html'>" +
+                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                "<input class='btn btn-primary' type='submit' value='Change status'/>" +
+                            "</form>" + 
+                        "</td>" +
+                        "<td>" + 
+                            "<form action='modAnimal.html'>" +
+                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
+                            "</form>" + 
+                        "</td>" +                        
+                        "<td><button class='btn btn-danger'>Eliminate</button></td>" +
                     "</tr>";
 
         document.getElementById("animals-table").innerHTML += newText;  
     }
+}
+
+function launchModal(animalName)
+{
+    //$('#statusModal').modal('show');
+    //document.getElementById("modalLabel").innerHTML = animalName + "";    
 }
