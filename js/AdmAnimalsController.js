@@ -40,7 +40,7 @@ function printList()
                         "<td>" + 
                             "<form action='animalProfile.html'>" +
                                 "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
-                                "<input class='btn btn-primary' type='submit' value='Change status'/>" +
+                                "<input class='btn btn-warning' type='submit' value='Change status'/>" +
                             "</form>" + 
                         "</td>" +
                         "<td>" + 
