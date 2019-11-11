@@ -20,7 +20,6 @@ Http.onreadystatechange = (e) =>
 
 function printList()
 {
-    var strStatus = "";
     for (var key in response) 
     {
         //Bootstrap table structure        
@@ -36,6 +35,29 @@ function printList()
                         "</td>" +                                                                       
                     "</tr>";
 
-        document.getElementById("animals-table").innerHTML += newText;  
+        document.getElementById("branches-table").innerHTML += newText;  
     }
+}
+
+function orderByName()
+{
+    response.sort(function(a, b)
+    {
+        var keyA = a.branch_name;
+        var keyB = b.branch_name;
+        
+        if(keyA < keyB) 
+            return -1;
+        if(keyA > keyB) 
+            return 1;
+        return 0;
+    });
+}
+
+function changeSortMethod()
+{   
+    document.getElementById("branches-table").innerHTML = "";
+    console.log("canging sort");
+    orderByName();
+    printList();
 }

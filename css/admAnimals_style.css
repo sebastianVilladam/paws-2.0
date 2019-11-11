@@ -60,3 +60,11 @@ h1
     background-color: #01f58d;
     color: white;
 }
+
+#sort-option
+{
+    transform: translateY(-50%);
+    background-color: #1500aa;
+    color: white;
+    border-radius: 20px;
+}

@@ -42,7 +42,7 @@ function setAnimalData(animalId)
                     document.getElementById("created").innerHTML = response[key].animal_created_on;
                     document.getElementById("branch").innerHTML = response[key].branch_id;
                     document.getElementById("delete-form").innerHTML = 
-                    "<form action='DELETE'>" +
+                    "<form action=''>" +
                         "<input type='hidden' id='id' value='" + response[key].animal_id + "'/>" +
                         "<button class='btn btn-danger' type='submit' value='' onclick='deleteAnimal()'>Eliminate</button>" +
                     "</form>";              
@@ -66,7 +66,8 @@ function deleteAnimal()
         return;
     }
     else
-        console.log(ret);
+        console.log(ret); 
+
 }
 
 function putSubmit(url, str)
@@ -90,7 +91,7 @@ function putSubmit(url, str)
         catch(err) 
         {
             alert("couldnt complete request. Is JS enabled for that domain?\\n\\n" + err.message);
-            return false;
+            window.locationf="file:///C:/Users/Sebasti%C3%A1n/Documents/Titoma/intern%20test%203/private/admAnimals.html";
         }
 
         if (req.readyState == 4) 
@@ -99,8 +100,8 @@ function putSubmit(url, str)
                 alert(req.responseText);
             else                
                 alert("XHR error: " + req.status +" "+req.statusText);
+
+            window.locationf="file:///C:/Users/Sebasti%C3%A1n/Documents/Titoma/intern%20test%203/private/admAnimals.html";
         }
     }
-
-    alert("req for getAsync is undefined");
 }
