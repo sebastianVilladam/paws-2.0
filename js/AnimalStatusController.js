@@ -44,52 +44,21 @@ function setAnimalData(animalId)
 
 function changeStatus()
 {
-    //builds the params required for the submit as the URL and data
-    var url = "https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/animal";
-    var str = "animal_id=" + document.getElementById("formInput").value +
-              "&animal_status_id=" + document.getElementById("formInput1").value;
+    console.log("preparing....");
+    var animal_id = document.getElementById("formInput").value;
+    var animal_status_id = document.getElementById("formInput1").value;
 
-    var ret = putSubmit(url, str) ;
-
-    if (ret.match(/^XHR error/)) 
-    {
-        console.log(ret);
-        return;
+    const data = {animal_id, animal_status_id};
+    const options = {
+        method: 'PUT',
+        header: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)        
     }
-    else
-        console.log(ret); 
 
-}
-
-function putSubmit(url, str)
-{
-    var req;
-
-    if (window.XMLHttpRequest) 
-        req = new XMLHttpRequest();
-    else if (window.ActiveXObject) 
-        req = new ActiveXObject("Microsoft.XMLHTTP");
-        
-    if (req != undefined) 
-    {
-        req.overrideMimeType("application/json"); 
-        try 
-        {            
-            req.open("PUT", url, false); 
-            
-            req.send(str);             
-        }
-        catch(err) 
-        {
-            alert("couldnt complete request. Is JS enabled for that domain?\\n\\n" + err.message);            
-        }
-
-        if (req.readyState == 4) 
-        {             
-            if (req.status == 200)                  
-                alert(req.responseText);
-            else                
-                alert("XHR error: " + req.status +" "+req.statusText);            
-        }
-    }
+    fetch('https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/animal', options).then(resp =>{
+        alert(resp);
+        console.log(resp);
+    });
 }
