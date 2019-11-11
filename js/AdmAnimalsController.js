@@ -36,26 +36,53 @@ function printList()
                         "<th scope='row'>" + key + "</th>" +
                         "<td>" + response[key].animal_name + "</td>" +
                         "<td>" + strStatus + "</td>" +
-                        "<td>" + response[key].animal_id + "</td>" +  
-                        "<td>" + 
-                            "<form action='animalStatus.html'>" +
-                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
-                                "<input class='btn btn-warning' type='submit' value='Change status'/>" +
-                            "</form>" + 
-                        "</td>" +
-                        "<td>" + 
-                            "<form action='modAnimal.html'>" +
-                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
-                                "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
-                            "</form>" + 
-                        "</td>" +                        
-                        "<td>" + 
-                            "<form action='delAnimal.html'>" +
-                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
-                                "<input class='btn btn-danger' type='submit' value='Eliminate'/>" +
-                            "</form>" + 
-                        "</td>" +
-                    "</tr>";
+                        "<td>" + response[key].animal_id + "</td>";
+
+                        if(response[key].animal_status_id == 2)
+                        {
+                            newText += "<td>" + 
+                                            "<form action='animalStatus.html'>" +
+                                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                                "<input class='btn btn-warning btn-disabled' disabled type='submit' value='Change status'/>" +
+                                            "</form>" + 
+                                        "</td>";
+                        }
+                        else
+                        {
+                            newText += "<td>" + 
+                                            "<form action='animalStatus.html'>" +
+                                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                                "<input class='btn btn-warning' type='submit' value='Change status'/>" +
+                                            "</form>" + 
+                                        "</td>";
+                        }
+
+                        if(response[key].animal_status_id == 1)
+                        {
+                            newText += "<td>" + 
+                                          "<form action='modAnimal.html'>" +
+                                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                                "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
+                                            "</form>" + 
+                                        "</td>";
+                        }
+                        else
+                        {
+                            newText += "<td>" + 
+                                          "<form action='modAnimal.html'>" +
+                                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                                "<input class='btn btn-primary btn-disabled'disabled type='submit' value='Modify data'/>" +
+                                            "</form>" + 
+                                        "</td>";
+                        } 
+                                                 
+                        newText+= "<td>" + 
+                                    "<form action='delAnimal.html'>" +
+                                        "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                        "<input class='btn btn-danger' type='submit' value='Eliminate'/>" +
+                                    "</form>" + 
+                                "</td>" +
+                            "</tr>";
 
         document.getElementById("animals-table").innerHTML += newText;  
     }
