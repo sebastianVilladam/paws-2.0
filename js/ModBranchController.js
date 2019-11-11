@@ -48,54 +48,24 @@ function setBranchData(branchId)
 
 function submitInfo()
 {
-    //builds the params required for the submit as the URL and data
-    var url = "https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/branch";
-    var str = "animal_id='" + document.getElementById("formInput").value + "'" + 
-              "&animal_name='" + document.getElementById("formInput1").value + "'" + 
-              "&animal_kind='" + document.getElementById("formInput2").value + "'" +
-              "&animal_entry_date='" + document.getElementById("formInput3").value + "'" +
-              "&branch_id=" + document.getElementById("formInput4").value;              
+    console.log("preparing....");
+    var branch_id = document.getElementById("formInput").value;
+    var branch_name = document.getElementById("formInput1").value;
+    var branch_address = document.getElementById("formInput2").value;
+    var branch_phone = document.getElementById("formInput3").value;
+    var branch_employee_number = document.getElementById("formInput4").value;
 
-    var ret = putSubmit(url, str) ;
-
-    if (ret.match(/^XHR error/)) 
-    {
-        console.log(ret);
-        return;
+    const data = { branch_id, branch_name, branch_address, branch_phone, branch_employee_number};
+    const options = {
+        method: 'PUT',
+        header: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)        
     }
-    else
-        console.log(ret);
-}
 
-function putSubmit(url, str)
-{
-    var req;
-
-    if (window.XMLHttpRequest) 
-        req = new XMLHttpRequest();
-    else if (window.ActiveXObject) 
-        req = new ActiveXObject("Microsoft.XMLHTTP");
-        
-    if (req != undefined) 
-    {
-        req.overrideMimeType("application/json"); 
-        try 
-        {            
-            req.open("PUT", url, false);                   
-            req.send(str);         
-        }
-        catch(err) 
-        {
-            alert("couldnt complete request. Is JS enabled for that domain?\\n\\n" + err.message);
-            return false;
-        }
-
-        if (req.readyState == 4) 
-        {             
-            if (req.status == 200)                   
-                alert(req.responseText);
-            else                
-                alert("XHR error: " + req.status +" "+req.statusText);
-        }
-    }    
+    fetch('https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/branch', options).then(resp =>{
+        alert(resp);
+        console.log(resp);
+    });
 }
