@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <script type="text/javascript" src="../js/ModAnimalController.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/admAnimals_style.css">
@@ -28,7 +26,7 @@
                 <a class="nav-link" href="admAnimals.html">Administrate animals</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admBranches.html">Administrate branches</a>
+                <a class="nav-link" href="#">Administrate branches</a>
             </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -39,46 +37,29 @@
         </div>
     </nav>
 
-    <h1 id="animal-name">Animal name</h1>
-    <a href="admAnimals.html" class="btn btn-primary" id="btn2">Cancel</a>
+    <h1>Branches on sistem's data base</h1>
+    <a href="adminHome.html" class="btn btn-primary" id="btn2">Go back</a>
+    <a href="addAnimal.html" class="btn btn-primary" id="btn1">Add branch</a>
 
-    <!--Form section-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <form method="PUT" id="upload-animal-form">
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" id="formInput" value="" name="form-date">
-                    </div>
-                    <div class="form-group">
-                        <label for="Name">Name:</label>
-                        <input type="text" class="form-control" id="formInput1" placeholder="Toby"  name="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="Kind">Animal kind:</label>
-                        <input type="text" class="form-control" id="formInput2" placeholder="Dog"  name="kind">
-                    </div>
-                    <div class="form-group">
-                        <label for="Age">Entry date:</label>
-                        <input type="text" class="form-control" id="formInput3" placeholder="2019-11-9"  name="date">
-                    </div>
-                    <div class="form-group">
-                        <label for="Age">Branch id:</label>
-                        <input type="text" class="form-control" id="formInput4" placeholder="2"  name="branch">
-                    </div>
-                    <div class="form-group">
-                        <label for="Age">Age:</label>
-                        <input type="text" class="form-control" id="formInput5" placeholder="5"  name="age">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="btn1" onclick="submitInfo()">Save changes</button>
-                </form>
-                <script>processData()</script>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
+    <!--branches table section-->
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>                    
+                    <th scope="col">Id</th>                             
+                    <th scope="col"></th>
+                    <th scope="col"></th>       
+                </tr>
+            </thead>
+            <tbody id="animals-table">
+                
+            </tbody>
+        </table>
     </div>
 </body>
+<script type="text/javascript" src="../js/AdmBranchesController.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
