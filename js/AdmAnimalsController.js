@@ -38,7 +38,7 @@ function printList()
                         "<td>" + strStatus + "</td>" +
                         "<td>" + response[key].animal_id + "</td>" +  
                         "<td>" + 
-                            "<form action='animalProfile.html'>" +
+                            "<form action='animalStatus.html'>" +
                                 "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
                                 "<input class='btn btn-warning' type='submit' value='Change status'/>" +
                             "</form>" + 
@@ -59,10 +59,4 @@ function printList()
 
         document.getElementById("animals-table").innerHTML += newText;  
     }
-}
-
-function launchModal(animalName)
-{
-    //$('#statusModal').modal('show');
-    //document.getElementById("modalLabel").innerHTML = animalName + "";    
 }
