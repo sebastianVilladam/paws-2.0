@@ -42,10 +42,10 @@ function setAnimalData(animalId)
                     document.getElementById("created").innerHTML = response[key].animal_created_on;
                     document.getElementById("branch").innerHTML = response[key].branch_id;
                     document.getElementById("delete-form").innerHTML = 
-                    "<form action=''>" +
-                        "<input type='hidden' id='id' value='" + response[key].animal_id + "'/>" +
+                    "<div>" +
+                        "<input type='hidden' id='formInput' value='" + response[key].animal_id + "' name='animal_id'/>" +
                         "<button class='btn btn-danger' type='submit' value='' onclick='deleteAnimal()'>Eliminate</button>" +
-                    "</form>";              
+                    "</div>";              
                 }
             }         
         }
@@ -54,54 +54,20 @@ function setAnimalData(animalId)
 
 function deleteAnimal()
 {
-    //builds the params required for the submit as the URL and data
-    var url = "https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/animal";
-    var str = "animal_id=" + document.getElementById("id").value;
-
-    var ret = putSubmit(url, str) ;
-
-    if (ret.match(/^XHR error/)) 
-    {
-        console.log(ret);
-        return;
+    console.log("preparing....");
+    var animal_id = document.getElementById("formInput").value;
+    
+    const data = {animal_id};
+    const options = {
+        method: 'DELETE',
+        header: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)        
     }
-    else
-        console.log(ret); 
 
-}
-
-function putSubmit(url, str)
-{
-    var req;
-
-    if (window.XMLHttpRequest) 
-        req = new XMLHttpRequest();
-    else if (window.ActiveXObject) 
-        req = new ActiveXObject("Microsoft.XMLHTTP");
-        
-    if (req != undefined) 
-    {
-        req.overrideMimeType("application/json"); 
-        try 
-        {            
-            req.open("DELETE", url, false); 
-            
-            req.send(str);             
-        }
-        catch(err) 
-        {
-            alert("couldnt complete request. Is JS enabled for that domain?\\n\\n" + err.message);
-            window.locationf="file:///C:/Users/Sebasti%C3%A1n/Documents/Titoma/intern%20test%203/private/admAnimals.html";
-        }
-
-        if (req.readyState == 4) 
-        {             
-            if (req.status == 200)                  
-                alert(req.responseText);
-            else                
-                alert("XHR error: " + req.status +" "+req.statusText);
-
-            window.locationf="file:///C:/Users/Sebasti%C3%A1n/Documents/Titoma/intern%20test%203/private/admAnimals.html";
-        }
-    }
+    fetch('https://eyavqewaud.execute-api.ap-northeast-1.amazonaws.com/production/animal', options).then(resp =>{
+        alert(resp);
+        console.log(resp);
+    });
 }
