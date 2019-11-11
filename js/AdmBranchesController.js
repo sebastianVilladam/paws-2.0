@@ -33,8 +33,7 @@ function printList()
                                 "<input type='hidden' name='id' value='" + response[key].branch_id + "'/>" +
                                 "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
                             "</form>" + 
-                        "</td>" +                        
-                        "<td><button class='btn btn-danger'>Eliminate</button></td>" +
+                        "</td>" +                                                                       
                     "</tr>";
 
         document.getElementById("animals-table").innerHTML += newText;  

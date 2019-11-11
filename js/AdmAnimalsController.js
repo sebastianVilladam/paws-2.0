@@ -49,7 +49,12 @@ function printList()
                                 "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
                             "</form>" + 
                         "</td>" +                        
-                        "<td><button class='btn btn-danger'>Eliminate</button></td>" +
+                        "<td>" + 
+                            "<form action='delAnimal.html'>" +
+                                "<input type='hidden' name='id' value='" + response[key].animal_id + "'/>" +
+                                "<input class='btn btn-danger' type='submit' value='Eliminate'/>" +
+                            "</form>" + 
+                        "</td>" +
                     "</tr>";
 
         document.getElementById("animals-table").innerHTML += newText;  
