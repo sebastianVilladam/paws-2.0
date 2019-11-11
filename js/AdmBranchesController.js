@@ -29,7 +29,7 @@ function printList()
                         "<td>" + response[key].branch_name + "</td>" +                        
                         "<td>" + response[key].branch_id + "</td>" +                          
                         "<td>" + 
-                            "<form action='modAnimal.html'>" +
+                            "<form action='modBranch.html'>" +
                                 "<input type='hidden' name='id' value='" + response[key].branch_id + "'/>" +
                                 "<input class='btn btn-primary' type='submit' value='Modify data'/>" +
                             "</form>" + 
