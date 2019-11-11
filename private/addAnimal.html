@@ -45,39 +45,39 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <form method="POST" id="upload-animal-form">
+                <div id="upload-animal-form">
                     <div class="form-group">
                         <label for="Name">Name:</label>
-                        <input type="text" class="form-control" id="formInput" placeholder="Toby"  name="name">
+                        <input type="text" class="form-control" id="formInput" placeholder="Toby"  name="animal_name">
                     </div>
                     <div class="form-group">
                         <label for="Kind">Animal kind:</label>
-                        <input type="text" class="form-control" id="formInput2" placeholder="Dog"  name="kind">
+                        <input type="text" class="form-control" id="formInput2" placeholder="Dog"  name="animal_kind">
                     </div>
                     <div class="form-group">
                         <label for="entry-date">Entry date:</label>
-                        <input type="text" class="form-control" id="formInput3" placeholder="2019-11-9"  name="age">
+                        <input type="text" class="form-control" id="formInput3" placeholder="2019-11-9"  name="aniaml_entry_date">
                     </div>
                     <div class="form-group">
                         <label for="created-on">Created on:</label>
-                        <input type="number" class="form-control" id="formInput4" placeholder="Dog"  name="kind">
+                        <input type="number" class="form-control" id="formInput4" placeholder="Dog"  name="animal_created_on">
                     </div>
                     <div class="form-group">
                         <label for="branch-id">Branch id:</label>
-                        <input type="number" class="form-control" id="formInput5" placeholder="2"  name="age">
+                        <input type="number" class="form-control" id="formInput5" placeholder="2"  name="branch_id">
                     </div>
                     <label for="Status">Status:</label>
-                    <select class="form-control" id="formInput6">                    
+                    <select class="form-control" id="formInput6" name="animal_status_id">                    
                         <option value="1">Up for adoption</option>
                         <option value="3">Adopted</option>
                         <option value="2">Euthanazed</option>
                     </select>
                     <div class="form-group">
                         <label for="Age">Age:</label>
-                        <input type="text" class="form-control" id="formInput7" placeholder="5"  name="age">
+                        <input type="text" class="form-control" id="formInput7" placeholder="5"  name="animal_age">
                     </div>
-                    <button type="submit" class="btn btn-primary" id="btn1" onclick="submitInfo()">Add animal</button>
-                </form>
+                    <button class="btn btn-primary" id="btn1" onclick="submitInfo()">Add animal</button>
+                </div>
             </div>
             <div class="col-md-3"></div>
         </div>
